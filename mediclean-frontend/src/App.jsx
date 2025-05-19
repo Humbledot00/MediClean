@@ -26,7 +26,7 @@ const processFile = () => {
   const formData = new FormData();
   formData.append("file", selectedFile);
 
-  fetch("http://localhost:5000/api/upload", {
+  fetch("https://mediclean.onrender.com/api/upload", {
     method: "POST",
     body: formData,
   })
@@ -48,7 +48,7 @@ const processFile = () => {
 
 
 const downloadFile = (fileName) => {
-  fetch(`http://localhost:5000/download/${fileName}`)
+  fetch(`https://mediclean.onrender.com/download/${fileName}`)
     .then(response => {
       if (response.ok) {
         return response.blob();
@@ -68,7 +68,7 @@ const downloadFile = (fileName) => {
 };
 
 const downloadAllFiles = () => {
-  fetch("http://localhost:5000/download/all")
+  fetch("https://mediclean.onrender.com/download/all")
     .then(response => {
       if (response.ok) {
         return response.blob();
