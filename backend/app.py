@@ -166,8 +166,8 @@ def upload_file():
     file.save(file_path)
 
     try:
-        # result = process_and_train_medical_model(file_path)
-        result = dummy_response # Replace with actual processing function
+        result = process_and_train_medical_model(file_path)
+        # result = dummy_response
         return jsonify(result)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
