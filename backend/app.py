@@ -4,6 +4,8 @@ import os
 import zipfile
 
 app = Flask(__name__)
+CORS(app, origins=["https://medi-clean.vercel.app"])
+
 CORS(app)
 
 UPLOAD_FOLDER = 'uploads'
